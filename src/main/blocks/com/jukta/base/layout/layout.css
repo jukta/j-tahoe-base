@@ -1,0 +1,109 @@
+.verticalLayout.spacing > * {
+    display: block;
+    margin-bottom: 10px;
+}
+.verticalLayout.spacing > *:last-child {
+    margin-bottom: 0;
+}
+.verticalLayout.padding, .horizontalLayout.padding {
+    padding: 10px;
+}
+.horizontalLayout > * {
+    display: inline-block;
+}
+.horizontalLayout.spacing > * {
+    margin-right: 10px;
+}
+.horizontalLayout.spacing > *:last-child {
+    margin-right: 0;
+}
+.horizontalLayout > *.right {
+    float: right;
+}
+
+.layout  {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.layout .column  {
+    width: 426px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.layout .column .wrp {
+    margin: 0 20px 20px 20px;
+}
+
+@media (max-width: 1280px) {
+    .layout {
+        width: 1024px;
+    }
+
+    .layout .column {
+        width: 512px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout {
+        width: 680px;
+    }
+
+    .layout .column {
+        width: 680px;
+    }
+
+}
+
+.splitLayout {
+    position: relative;
+    min-height:1em;
+}
+
+.splitLayout .left-pane,
+.splitLayout .right-pane {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.splitLayout .left-pane {
+    left: 0;
+}
+
+.splitLayout .right-pane {
+    right: 0;
+}
+
+.splitLayout .divider {
+    width: 5px;
+    position: absolute;
+    left: 110px;
+    height: 100%;
+    cursor: ew-resize;
+    background: lightgray;
+}
+
+.splitLayout .no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.popupPanel {
+    position: relative;
+    display: none;
+}
+
+.popupPanel .inner {
+    position: absolute;
+    z-index: 999999;
+}

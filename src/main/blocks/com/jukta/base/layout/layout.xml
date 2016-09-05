@@ -1,0 +1,44 @@
+<sv:root xmlns:sv="http://jukta.com/tahoe/schema"
+         xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:lc="."
+         namespace="com/jukta/base/layout">
+
+    <sv:block name="verticalLayout">
+        <div class="verticalLayout ${class} ${padding} ${spacing}">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+    <sv:block name="horizontalLayout">
+        <div class="horizontalLayout ${class} ${spacing} ${padding}">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+    <sv:block name="layout">
+        <div class="layout ${class}" sv-controller="layout">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+    <sv:block name="splitLayout">
+        <div class="splitLayout ${class}" sv-controller="splitLayout">
+            <div class="left-pane">
+                <sv:def name="left"/>
+            </div>
+            <div class="divider"></div>
+            <div class="right-pane">
+                <sv:def name="right"/>
+            </div>
+        </div>
+    </sv:block>
+
+    <sv:block name="popupPanel">
+        <div _id="${id}" class="popupPanel" sv-controller="popupPanel">
+            <div class="inner ${class}">
+                <sv:def/>
+            </div>
+        </div>
+    </sv:block>
+
+</sv:root>
