@@ -9,7 +9,7 @@
         <dependency>
             <groupId>com.jukta</groupId>
             <artifactId>j-tahoe-core</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -29,7 +29,7 @@
             <plugin>
                 <groupId>com.jukta</groupId>
                 <artifactId>j-tahoe-maven</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.2-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>code-gen</id>
@@ -38,8 +38,8 @@
                             <goal>code-gen</goal>
                         </goals>
                         <configuration>
-                            <blocksDir>${project.basedir}/src/main/blocks</blocksDir>
-                            <outputDir>${project.basedir}/gen/java</outputDir>
+                            <blocksDir>${project.basedir}/blocks</blocksDir>
+                            <outputDir>${project.basedir}/gen</outputDir>
                         </configuration>
                     </execution>
                 </executions>
@@ -50,6 +50,7 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <generatedSourcesDirectory>${project.basedir}/gen/java</generatedSourcesDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -58,16 +59,9 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${project.basedir}/gen/java</directory>
+                            <directory>${project.basedir}/gen</directory>
                         </fileset>
                     </filesets>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <generatedSourcesDirectory>${project.basedir}/gen/java</generatedSourcesDirectory>
                 </configuration>
             </plugin>
         </plugins>
