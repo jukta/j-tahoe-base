@@ -1,5 +1,7 @@
-.verticalLayout.spacing > * {
+.verticalLayout > * {
     display: block;
+}
+.verticalLayout.spacing > * {
     margin-bottom: 10px;
 }
 .verticalLayout.spacing > *:last-child {

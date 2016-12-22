@@ -4,25 +4,25 @@
          namespace="com/jukta/base/layout">
 
     <sv:block name="verticalLayout">
-        <div class="verticalLayout ${class} ${padding} ${spacing}">
+        <div class="verticalLayout ${mods}">
             <sv:def/>
         </div>
     </sv:block>
 
     <sv:block name="horizontalLayout">
-        <div class="horizontalLayout ${class} ${spacing} ${padding}">
+        <div class="horizontalLayout ${mods}">
             <sv:def/>
         </div>
     </sv:block>
 
     <sv:block name="layout">
-        <div class="layout ${class}" sv-controller="layout">
+        <div class="layout ${mods}" sv-controller="layout">
             <sv:def/>
         </div>
     </sv:block>
 
     <sv:block name="splitLayout">
-        <div class="splitLayout ${class}" sv-controller="splitLayout">
+        <div class="splitLayout ${mods}" sv-controller="splitLayout">
             <div class="left-pane">
                 <sv:def name="left"/>
             </div>
@@ -34,8 +34,8 @@
     </sv:block>
 
     <sv:block name="popupPanel">
-        <div _id="${id}" class="popupPanel" sv-controller="popupPanel">
-            <div class="inner ${class}">
+        <div _id="${id}" class="popupPanel ${mods}" sv-controller="popupPanel">
+            <div class="inner">
                 <sv:def/>
             </div>
         </div>
