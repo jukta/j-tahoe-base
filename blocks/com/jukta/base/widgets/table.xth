@@ -1,0 +1,25 @@
+<sv:root xmlns:sv="http://jukta.com/tahoe/schema"
+         xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:lc="."
+         namespace="com/jukta/base/widgets/table">
+
+
+    <sv:block name="cell">
+        <div class="tableCell ${mods}">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+    <sv:block name="row">
+        <div class="tableRow ${mods}">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+    <sv:block name="table">
+        <div class="table ${mods}">
+            <sv:def/>
+        </div>
+    </sv:block>
+
+</sv:root>

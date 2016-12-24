@@ -45,6 +45,23 @@
         <input type="hidden" name="${fieldName}" value="${value}"/>
     </th:block>
 
+    <th:block name="checkboxField">
+        <div class="checkboxField ${mods}">
+            <th:if exp="${label}">
+                <div class="${!empty error ? 'error' : ''} ">
+                    <label for="${fieldName}">${label}</label>
+                </div>
+            </th:if>
+            <input type="checkbox" id="${fieldName}" name="${fieldName}"/>
+            <th:if exp="${!empty error}">
+                <span class="error">${error}</span>
+            </th:if>
+            <th:if exp="${!empty description}">
+                <p>${description}</p>
+            </th:if>
+        </div>
+    </th:block>
+
     <th:block name="button">
         <button type="${type}" class="button ${mods}">${label}</button>
     </th:block>
