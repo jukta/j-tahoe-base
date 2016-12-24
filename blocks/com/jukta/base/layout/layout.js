@@ -1,4 +1,4 @@
-SV.controller('layout', function(el) {
+SV.controller('layout', function (el) {
     this.on = {};
 
     var children = $(el).children();
@@ -7,10 +7,10 @@ SV.controller('layout', function(el) {
     var panTempl = $("<div class='wrp'></div>");
     $(el).html(colTempl.clone());
 
-    var rebuild = function() {
+    var rebuild = function () {
         var w = $(el).outerWidth();
         var w1 = $(el).find(".column").outerWidth();
-        var colNum = Math.floor(w/w1);
+        var colNum = Math.floor(w / w1);
 
         if (cNum == colNum) return;
         $(el).html(colTempl.clone());
@@ -25,7 +25,7 @@ SV.controller('layout', function(el) {
         cNum = colNum;
     };
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         rebuild();
     });
 
@@ -33,7 +33,7 @@ SV.controller('layout', function(el) {
 
 });
 
-SV.controller('splitLayout', function(el) {
+SV.controller('splitLayout', function (el) {
     this.on = {};
     var hold = false;
     var divider = $(el).find(".divider");
@@ -57,7 +57,7 @@ SV.controller('splitLayout', function(el) {
         hold = false;
     };
 
-    var moveHandler = function(e) {
+    var moveHandler = function (e) {
         var pos = e.pageX - $(el).position().left;
         var w = $(el).innerWidth();
         if (pos <= 0) {
@@ -80,37 +80,37 @@ SV.controller('splitLayout', function(el) {
         rightPane.width(w - pos - dividerWidth);
     };
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         handlePanes();
     });
 
     handlePanes();
 });
 
-SV.controller('popupPanel', function(el) {
+SV.controller('popupPanel', function (el) {
     this.on = {};
     var self = this;
     var show = false;
-    
+
     this.visible = function () {
-      return show;  
+        return show;
     };
 
-    this.show = function() {
+    this.show = function () {
         $(el).show();
         show = true;
         setTimeout(function () {
             $(window).bind("click", clickHandler);
         }, 100);
     };
-    
+
     this.hide = function () {
         $(el).hide();
         show = false;
         $(window).unbind("click", clickHandler);
     };
 
-    var clickHandler = function(e) {
+    var clickHandler = function (e) {
         if (e.target != el && $(el).find(e.target).size() == 0) {
             self.hide();
         }

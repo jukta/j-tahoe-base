@@ -1,34 +1,41 @@
 .verticalLayout > * {
     display: block;
 }
+
 .verticalLayout.spacing > * {
     margin-bottom: 10px;
 }
+
 .verticalLayout.spacing > *:last-child {
     margin-bottom: 0;
 }
+
 .verticalLayout.padding, .horizontalLayout.padding {
     padding: 10px;
 }
+
 .horizontalLayout > * {
     display: inline-block;
 }
+
 .horizontalLayout.spacing > * {
     margin-right: 10px;
 }
+
 .horizontalLayout.spacing > *:last-child {
     margin-right: 0;
 }
+
 .horizontalLayout > *.right {
     float: right;
 }
 
-.layout  {
+.layout {
     width: 1280px;
     margin: 0 auto;
 }
 
-.layout .column  {
+.layout .column {
     width: 426px;
     display: inline-block;
     vertical-align: top;
@@ -61,7 +68,7 @@
 
 .splitLayout {
     position: relative;
-    min-height:1em;
+    min-height: 1em;
 }
 
 .splitLayout .left-pane,
