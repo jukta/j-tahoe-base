@@ -1,4 +1,4 @@
-SV.controller('layout', function (el) {
+SV.controller('pageLayout', function (el) {
     this.on = {};
 
     var children = $(el).children();

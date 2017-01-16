@@ -1,3 +1,113 @@
+.layout > * {
+    float: left;
+    width: 100%;
+}
+
+.layout.hor {
+    display: table;
+    width: 100%;
+}
+
+.layout.hor > * {
+    float: none;
+    display: table-cell;
+}
+
+.layout.ver > * {
+    display: block;
+    float: none;
+}
+
+.layout > *.right:last-child,
+.layout.hor > *.right:last-child {
+    float:right;
+}
+
+.layout.padding {
+    padding: 10px ;
+}
+
+.layout.spacing > * {
+    padding: 10px;
+}
+
+.layout:after,
+.layout:before,
+.layout > *:after,
+.layout > *:before {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+.layout > *.c1 {
+    width: 8.333333%;
+}
+
+.layout > *.c2 {
+    width: 16.66666%;
+}
+
+.layout > *.c3 {
+    width: 25%;
+}
+
+.layout > *.c4 {
+    width: 33.333333%;
+}
+
+.layout > *.c5 {
+    width: 41.666666%;
+}
+
+.layout > *.c6 {
+    width: 50%;
+}
+
+.layout > *.c7 {
+    width: 58.333333%;
+}
+
+.layout > *.c8 {
+    width: 66.666666%;
+}
+
+.layout > *.c9 {
+    width: 75%;
+}
+
+.layout > *.c10 {
+    width: 83.333333%;
+}
+
+.layout > *.c11 {
+    width: 91.666666%;
+}
+
+.layout > *.c12 {
+    width: 100%;
+}
+
+.pageContainer {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+    .pageContainer {
+        width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pageContainer {
+        width: 680px;
+    }
+}
+
+/*----------------------*/
+
+
 .verticalLayout > * {
     display: block;
 }
@@ -12,6 +122,11 @@
 
 .verticalLayout.padding, .horizontalLayout.padding {
     padding: 10px;
+}
+
+.horizontalLayout {
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .horizontalLayout > * {
@@ -30,37 +145,37 @@
     float: right;
 }
 
-.layout {
+.pageLayout {
     width: 1280px;
     margin: 0 auto;
 }
 
-.layout .column {
+.pageLayout .column {
     width: 426px;
     display: inline-block;
     vertical-align: top;
 }
 
-.layout .column .wrp {
+.pageLayout .column .wrp {
     margin: 0 20px 20px 20px;
 }
 
 @media (max-width: 1280px) {
-    .layout {
+    .pageLayout {
         width: 1024px;
     }
 
-    .layout .column {
+    .pageLayout .column {
         width: 512px;
     }
 }
 
 @media (max-width: 1024px) {
-    .layout {
+    .pageLayout {
         width: 680px;
     }
 
-    .layout .column {
+    .pageLayout .column {
         width: 680px;
     }
 
@@ -91,7 +206,7 @@
 .splitLayout .divider {
     width: 5px;
     position: absolute;
-    left: 110px;
+    left: 50%;
     height: 100%;
     cursor: ew-resize;
     background: lightgray;

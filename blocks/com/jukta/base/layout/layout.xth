@@ -1,44 +1,65 @@
-<sv:root xmlns:sv="http://jukta.com/tahoe/schema"
+<th:root xmlns:th="http://jukta.com/tahoe/schema"
          xmlns="http://www.w3.org/1999/xhtml"
          xmlns:lc="."
          namespace="com/jukta/base/layout">
 
-    <sv:block name="verticalLayout">
+    <th:block name="cell">
+        <th:if exp="${!empty width}">
+            <th:set name="cols" value="c${width}"/>
+        </th:if>
+        <div class="cell ${cols} ${mods}">
+            <th:def/>
+        </div>
+    </th:block>
+
+    <th:block name="layout">
+        <div class="layout ${mods}">
+            <th:def/>
+        </div>
+    </th:block>
+
+    <th:block name="pageContainer">
+        <div class="pageContainer ${mods}">
+            <th:def/>
+        </div>
+    </th:block>
+
+    <th:block name="verticalLayout">
         <div class="verticalLayout ${mods}">
-            <sv:def/>
+            <th:def/>
         </div>
-    </sv:block>
+    </th:block>
 
-    <sv:block name="horizontalLayout">
+    <th:block name="horizontalLayout">
         <div class="horizontalLayout ${mods}">
-            <sv:def/>
+            <th:def/>
         </div>
-    </sv:block>
+    </th:block>
 
-    <sv:block name="layout">
-        <div class="layout ${mods}" sv-controller="layout">
-            <sv:def/>
+    <th:block name="pageLayout">
+        <div class="pageLayout ${mods}" sv-controller="pageLayout">
+            <th:def/>
         </div>
-    </sv:block>
+    </th:block>
 
-    <sv:block name="splitLayout">
+    <th:block name="splitLayout">
         <div class="splitLayout ${mods}" sv-controller="splitLayout">
             <div class="left-pane">
-                <sv:def name="left"/>
+                <th:def name="left"/>
             </div>
             <div class="divider"></div>
             <div class="right-pane">
-                <sv:def name="right"/>
+                <th:def name="right"/>
             </div>
         </div>
-    </sv:block>
+    </th:block>
 
-    <sv:block name="popupPanel">
+    <th:block name="popupPanel">
         <div _id="${id}" class="popupPanel ${mods}" sv-controller="popupPanel">
             <div class="inner">
-                <sv:def/>
+                <th:def/>
             </div>
         </div>
-    </sv:block>
+    </th:block>
 
-</sv:root>
+</th:root>

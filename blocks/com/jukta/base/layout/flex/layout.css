@@ -1,0 +1,40 @@
+.flex-horizontalLayout,
+.flex-verticalLayout {
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    display: -webkit-flex;
+    -webkit-flex-wrap: nowrap;
+}
+
+.flex-verticalLayout {
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.flex-verticalLayout.justify,
+.flex-horizontalLayout.justify {
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.flex-verticalLayout.padding,
+.flex-horizontalLayout.padding {
+    padding: 10px;
+}
+
+.flex-verticalLayout.spacing > * {
+    margin-bottom: 10px;
+}
+.flex-horizontalLayout.spacing > * {
+    margin-right: 10px;
+}
+
+.flex-verticalLayout.spacing > *:last-child {
+    margin-bottom: 0;
+}
+.flex-horizontalLayout.spacing > *:last-child {
+    margin-right: 0;
+}
