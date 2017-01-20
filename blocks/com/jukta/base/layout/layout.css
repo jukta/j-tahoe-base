@@ -11,6 +11,7 @@
 .layout.hor > * {
     float: none;
     display: table-cell;
+    width: auto;
 }
 
 .layout.ver > * {
@@ -90,6 +91,10 @@
 
 .pageContainer {
     width: 1280px;
+    margin: 0 auto;
+}
+
+.pageContainer > * {
     margin: 0 auto;
 }
 

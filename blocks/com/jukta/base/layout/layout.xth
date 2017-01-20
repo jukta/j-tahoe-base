@@ -24,18 +24,6 @@
         </div>
     </th:block>
 
-    <th:block name="verticalLayout">
-        <div class="verticalLayout ${mods}">
-            <th:def/>
-        </div>
-    </th:block>
-
-    <th:block name="horizontalLayout">
-        <div class="horizontalLayout ${mods}">
-            <th:def/>
-        </div>
-    </th:block>
-
     <th:block name="pageLayout">
         <div class="pageLayout ${mods}" sv-controller="pageLayout">
             <th:def/>

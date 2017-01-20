@@ -6,9 +6,7 @@
     <th:block name="textField">
         <div class="textField ${mods} ${!empty error ? 'error' : ''}">
             <th:if exp="${!empty label}">
-                <div>
-                    <label>${label}</label>
-                </div>
+                <label>${label}</label>
             </th:if>
             <input type="text" name="${fieldName}" value="${value}">
                 <th:def/>
@@ -24,10 +22,8 @@
 
     <th:block name="passwordField">
         <div class="passwordField ${mods} ${!empty error ? 'error' : ''}">
-            <th:if exp="${label}">
-                <div>
-                    <label>${label}</label>
-                </div>
+            <th:if exp="${!empty label}">
+                <label>${label}</label>
             </th:if>
             <input type="password" name="${fieldName}" value="${value}">
                 <th:def/>
