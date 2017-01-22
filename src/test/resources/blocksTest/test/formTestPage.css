@@ -1,0 +1,57 @@
+.formTest {
+
+}
+
+.form {
+    width: 650px;
+}
+
+.fieldSet {
+    /*border: none;*/
+    text-align: right;
+}
+
+.fieldSet legend {
+    font-size: 120%;
+    text-align: left;
+}
+
+.label,
+.field {
+    margin: 10px 0;
+}
+
+.field .field-label {
+    /*width: 48%;*/
+    /*text-align: right;*/
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.field .input {
+    line-height: 20px;
+}
+
+.field .input,
+.label .field {
+    width: 50%;
+    margin: 0;
+}
+.label .field .input {
+    width: 100%;
+}
+
+.formTest .dropdown {
+    float: left;
+    margin-left: 50px;
+}
+
+.formTest .checkboxField {
+    text-align: left;
+    padding-left: 50%;
+}
+
+.formTest .buttonGroup {
+    text-align: right;
+    margin-top: 20px;
+}

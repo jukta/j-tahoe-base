@@ -3,59 +3,68 @@
          xmlns:lc="."
          namespace="com/jukta/base/form">
 
-    <th:block name="textField">
-        <div class="textField ${mods} ${!empty error ? 'error' : ''}">
-            <th:if exp="${!empty label}">
-                <label>${label}</label>
+    <th:block name="label">
+        <label class="label ${mods}">
+            <th:if exp="${!mods.contains('right')}">
+                <span class="lbl">${label}</span>
             </th:if>
-            <input type="text" name="${fieldName}" value="${value}">
-                <th:def/>
-            </input>
-            <th:if exp="${!empty error}">
-                <span class="error">${error}</span>
+            <th:def/>
+            <th:if exp="${mods.contains('right')}">
+                <span class="lbl">${label}</span>
             </th:if>
-            <th:if exp="${!empty description}">
-                <p>${description}</p>
-            </th:if>
-        </div>
+        </label>
     </th:block>
 
-    <th:block name="passwordField">
-        <div class="passwordField ${mods} ${!empty error ? 'error' : ''}">
+    <th:block name="field">
+        <span class="field ${class} ${mods} ${!empty error ? 'error' : ''}">
             <th:if exp="${!empty label}">
-                <label>${label}</label>
+                <label for="${fieldName}" class="field-label">${label}</label>
             </th:if>
-            <input type="password" name="${fieldName}" value="${value}">
-                <th:def/>
-            </input>
+            <th:def name="fieldBody"/>
             <th:if exp="${!empty error}">
                 <span class="error">${error}</span>
             </th:if>
             <th:if exp="${!empty description}">
                 <p>${description}</p>
             </th:if>
-        </div>
+        </span>
+    </th:block>
+
+    <th:block name="textField" parent="lc:field" class="textField">
+        <th:def name="fieldBody">
+            <input class="input" type="text" name="${fieldName}" value="${value}">
+                <th:def/>
+            </input>
+        </th:def>
+    </th:block>
+
+    <th:block name="passwordField" parent="lc:field" class="passwordField">
+        <th:def name="fieldBody">
+            <input class="input" type="password" name="${fieldName}" value="${value}">
+                <th:def/>
+            </input>
+        </th:def>
     </th:block>
 
     <th:block name="hiddenField">
         <input type="hidden" name="${fieldName}" value="${value}"/>
     </th:block>
 
-    <th:block name="checkboxField">
-        <div class="checkboxField ${mods}">
+    <th:block name="checkboxField" class="checkboxField">
+        <span class="field checkboxField ${class} ${mods} ${!empty error ? 'error' : ''}">
+            <th:def name="fieldBody">
+                <input type="checkbox" id="${fieldName}" name="${fieldName}"/>
+            </th:def>
             <th:if exp="${!empty label}">
-                <div class="${!empty error ? 'error' : ''} ">
-                    <label for="${fieldName}">${label}</label>
-                </div>
+                <label for="${fieldName}" class="field-label">${label}</label>
             </th:if>
-            <input type="checkbox" id="${fieldName}" name="${fieldName}"/>
             <th:if exp="${!empty error}">
                 <span class="error">${error}</span>
             </th:if>
             <th:if exp="${!empty description}">
                 <p>${description}</p>
             </th:if>
-        </div>
+        </span>
     </th:block>
 
     <th:block name="button">
@@ -68,16 +77,21 @@
 
     <th:block name="dropdown">
         <div class="dropdown ${mods}" sv-controller="dropdown">
-            <button type="${type}">
+            <button type="button">
                 ${label}
                 <span class="caret"></span>
             </button>
             <ul>
-                <lc:action name="Action1" action="action1"/>
-                <lc:action name="Action2" action="action2"/>
-                <lc:action name="Action3" action="action3"/>
+                <th:def/>
             </ul>
         </div>
+    </th:block>
+
+    <th:block name="fieldSet">
+        <fieldset class="fieldSet ${mods}">
+            <legend>${legend}</legend>
+            <th:def/>
+        </fieldset>
     </th:block>
 
     <th:block name="form">
@@ -85,5 +99,12 @@
             <th:def/>
         </form>
     </th:block>
+
+    <th:block name="buttonGroup">
+        <div class="buttonGroup">
+            <th:def/>
+        </div>
+    </th:block>
+
 
 </th:root>

@@ -1,0 +1,148 @@
+<th:root xmlns:th="http://jukta.com/tahoe/schema"
+         xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:lc="."
+         xmlns:lt="com/jukta/base/layout"
+         xmlns:ltf="com/jukta/base/layout/flex"
+         namespace="test">
+
+
+    <th:block name="element">
+        <div class="element">
+            <th:def/>
+        </div>
+    </th:block>
+
+    <th:block name="LTest">
+
+        <div class="flexTest">
+
+                <h2>com/jukta/base/layout/layout</h2>
+                <h3>mods='spacing padding'</h3>
+                <lt:layout mods="spacing padding">
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <lt:cell><lc:element>no width</lc:element></lt:cell>
+                </lt:layout>
+
+                <h3>mods='hor spacing padding'</h3>
+                <lt:layout mods="hor spacing padding">
+                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <lt:cell><lc:element>no width</lc:element></lt:cell>
+                </lt:layout>
+                <br/>
+                <lt:layout mods="hor padding spacing">
+                    <div><lc:element>no width</lc:element></div>
+                    <div><lc:element>no width</lc:element></div>
+                    <div><lc:element>no width</lc:element></div>
+                </lt:layout>
+                <br/>
+                <lt:layout mods="hor padding spacing">
+                    <div><lc:element>no width</lc:element></div>
+                    <div><lc:element>no width</lc:element></div>
+                    <div class="right"><lc:element>class = right</lc:element></div>
+                </lt:layout>
+
+                <h3>ver spacing padding</h3>
+                <lt:layout mods="ver spacing padding">
+                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
+                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
+                    <div><lc:element>just div</lc:element></div>
+                </lt:layout>
+        </div>
+    </th:block>
+
+    <th:block name="flexHLTest">
+        <div class="flexTest">
+            <h2>com/jukta/base/layout/flex/horizontalLayout</h2>
+            <h3>Padding</h3>
+            <ltf:horizontalLayout mods="padding">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:horizontalLayout>
+
+            <h3>Padding + Spacing</h3>
+            <ltf:horizontalLayout mods="padding spacing">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:horizontalLayout>
+
+            <h3>Padding + Spacing + Justify</h3>
+            <ltf:horizontalLayout mods="padding spacing justify">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:horizontalLayout>
+        </div>
+    </th:block>
+
+    <th:block name="flexVLTest">
+        <div class="flexTest">
+            <h2>com/jukta/base/layout/flex/verticalLayout</h2>
+            <h3>Padding</h3>
+            <ltf:verticalLayout mods="padding">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:verticalLayout>
+
+            <h3>Padding + Spacing</h3>
+            <ltf:verticalLayout mods="padding spacing">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:verticalLayout>
+
+            <h3>Padding + Spacing + Justify</h3>
+            <ltf:verticalLayout mods="padding spacing justify">
+                <div></div>
+                <div></div>
+                <div></div>
+            </ltf:verticalLayout>
+        </div>
+    </th:block>
+
+
+    <th:block name="LayoutTest" dataHandler="layoutTest">
+        <div class="layoutTest">
+            <h2>com/jukta/base/layout/layout</h2>
+            <lt:pageLayout>
+                <div>${text1}</div>
+                <div>${text2}</div>
+                <div>${text1}</div>
+                <div>${text2}</div>
+                <div>${text1}</div>
+            </lt:pageLayout>
+        </div>
+    </th:block>
+
+    <th:block name="SplitLayoutTest" dataHandler="layoutTest">
+        <div class="SplitLayoutTest">
+            <h2>com/jukta/base/layout/splitLayout</h2>
+            <lt:splitLayout>
+                <th:def name="left">
+                    <div>${text1}</div>
+                </th:def>
+                <th:def name="right">
+                    <div>${text2}</div>
+                </th:def>
+            </lt:splitLayout>
+        </div>
+    </th:block>
+
+    <th:block name="LayoutTestPage">
+        <div class="layoutTest">
+            <lt:pageContainer>
+                <lc:LTest/>
+                <lc:LayoutTest></lc:LayoutTest>
+                <lc:SplitLayoutTest></lc:SplitLayoutTest>
+            </lt:pageContainer>
+        </div>
+    </th:block>
+
+</th:root>
