@@ -68,7 +68,7 @@
     </th:block>
 
     <th:block name="button">
-        <button type="${type}" class="button ${mods}">${label}</button>
+        <button type="${type}" class="button ${mods}" sv-click="${id}">${label}</button>
     </th:block>
 
     <th:block name="action">
