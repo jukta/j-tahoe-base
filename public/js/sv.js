@@ -8,8 +8,8 @@ var sv_core = new function() {
     };
 
     this.initControllers = function(el) {
-        el.find('[sv-click]').bind("click", onClick);
-        var c = el.find('[sv-controller]');
+        el.find('[sv-click]').addBack('[sv-click]').bind("click", onClick);
+        var c = el.find('[sv-controller]').addBack('[sv-controller]');
         for (var i = 0; i < c.length; i++) {
             var func = controllerList[$(c[i]).attr('sv-controller')];
             if (func) {
@@ -19,7 +19,7 @@ var sv_core = new function() {
     };
 
     this.destroyControllers = function(el) {
-        var c = el.find('[sv-controller]');
+        var c = el.find('[sv-controller]').addBack('[sv-controller]');
         for (var i = 0; i < c.length; i++) {
             var controller = c[i].svController;
             if (controller && controller.destroy) {
