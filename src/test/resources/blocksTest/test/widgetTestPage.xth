@@ -1,0 +1,39 @@
+<th:root xmlns:th="http://jukta.com/tahoe/schema"
+         xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:lc="."
+         xmlns:lt="com/jukta/base/layout"
+         xmlns:tb="com/jukta/base/widgets/tabs"
+         namespace="test">
+
+
+    <th:block name="TabsTest">
+        <div class="tabsTest">
+            <h2>com/jukta/base/widgets/tabs/tabsPanel</h2>
+            <!--<h3>mods='spacing padding'</h3>-->
+            <tb:tabsPanel>
+                <tb:tab name="tab1">Tab 1</tb:tab>
+                <tb:tab name="tab2">Tab 2</tb:tab>
+                <tb:tab name="tab3">Tab 3</tb:tab>
+                <tb:tabContent name="tab1">
+                    Tab 1 Content
+                </tb:tabContent>
+                <tb:tabContent name="tab2">
+                    Tab 2 Content
+                </tb:tabContent>
+                <tb:tabContent name="tab3">
+                    Tab 3 Content
+                </tb:tabContent>
+            </tb:tabsPanel>
+        </div>
+    </th:block>
+
+
+    <th:block name="WidgetsTestPage">
+        <div class="widgetTest">
+            <lt:pageContainer>
+                <lc:TabsTest/>
+            </lt:pageContainer>
+        </div>
+    </th:block>
+
+</th:root>

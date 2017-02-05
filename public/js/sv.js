@@ -45,8 +45,9 @@ var sv_core = new function() {
     };
 
     this.fire = function(el, link, data) {
-        var c = $(el);
-        c.push.apply(c, $(el).parents('[sv-controller]'));
+        var c = $(el).parents('[sv-controller]');
+        // var c = $(el);
+        // c.push.apply(c, $(el).parents('[sv-controller]'));
         var next = true;
         for (var i = 0; i < c.length ; i++) {
             var cont = c[i].svController;

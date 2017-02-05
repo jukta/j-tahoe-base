@@ -13,6 +13,7 @@ public class TestPageStarter {
         Dev.main(new String[0]);
         System.out.println("http://localhost:8080/test.LayoutTestPage");
         System.out.println("http://localhost:8080/test.FormTestPage");
+        System.out.println("http://localhost:8080/test.WidgetsTestPage");
     }
 
 }
