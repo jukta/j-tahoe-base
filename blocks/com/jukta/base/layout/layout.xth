@@ -3,21 +3,6 @@
          xmlns:lc="."
          namespace="com/jukta/base/layout">
 
-    <th:block name="cell">
-        <th:if exp="${!empty width}">
-            <th:set name="cols" value="c${width}"/>
-        </th:if>
-        <div class="cell ${cols} ${mods}">
-            <th:def/>
-        </div>
-    </th:block>
-
-    <th:block name="layout">
-        <div class="layout ${mods}">
-            <th:def/>
-        </div>
-    </th:block>
-
     <th:block name="pageContainer">
         <div class="pageContainer ${mods}">
             <th:def/>
@@ -47,6 +32,33 @@
             <div class="inner">
                 <th:def/>
             </div>
+        </div>
+    </th:block>
+
+    <th:block name="element">
+        <elem class="element ${class} ${mods}">
+            <th:def/>
+        </elem>
+    </th:block>
+
+    <th:block name="container" parent="lc:element" class="container">
+    </th:block>
+
+    <th:block name="tabContent">
+        <div class="tabContent ${mods}" name="${name}">
+            <th:def/>
+        </div>
+    </th:block>
+
+    <th:block name="tab">
+        <span class="tab ${mods}" sv-click="tab" name="${name}">
+            <th:def/>
+        </span>
+    </th:block>
+
+    <th:block name="tabsPanel">
+        <div class="tabsPanel ${mods}" sv-controller="tabsPanel">
+            <th:def/>
         </div>
     </th:block>
 

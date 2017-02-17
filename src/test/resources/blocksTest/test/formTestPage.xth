@@ -5,22 +5,83 @@
          xmlns:lt="com/jukta/base/layout"
          namespace="test">
 
+    <th:block name="labelTest">
+        <div class="labelTest">
+            <h2>com/jukta/base/form/label</h2>
+            <frm:label label="Some label">
+                <frm:textField/>
+            </frm:label>
+
+            <h3>mods='right'</h3>
+            <frm:label label="Some label" mods="right">
+                <frm:textField/>
+            </frm:label>
+        </div>
+    </th:block>
+
     <th:block name="textFieldTest">
         <h2>com/jukta/base/form/textField</h2>
-        <h3>Label</h3>
-        <frm:textField fieldName="hello" label="Some field"/>
-
-        <h3>Error</h3>
-        <frm:textField fieldName="hello" label="Some field" error="This is error message!" description="This is description for this field"/>
+        <h3>name='myName' value='myValue'</h3>
+        <frm:textField name="myName" value="myValue"/>
     </th:block>
 
     <th:block name="passwordFieldTest">
         <h2>com/jukta/base/form/passwordField</h2>
-        <h3>Label</h3>
-        <frm:passwordField label="Some password field"/>
+        <frm:passwordField/>
 
-        <h3>Error</h3>
-        <frm:passwordField label="Some password field" error="This is error message!" description="This is description for this field"/>
+        <h3>error='This is error message!'</h3>
+        <frm:passwordField error="This is error message!" placeholder="Placeholder"/>
+    </th:block>
+
+    <th:block name="textareaFieldTest">
+        <h2>com/jukta/base/form/textareaField</h2>
+        <frm:textareaField name="myName" placeholder="Place your text here">
+
+        </frm:textareaField>
+    </th:block>
+
+    <th:block name="checkboxFieldTest">
+        <h2>com/jukta/base/form/checkboxField</h2>
+
+        <frm:checkboxField name="myName"/>
+
+        <h3>error='Error'</h3>
+        <frm:label label="My Label">
+            <frm:checkboxField name="myName" error="Error"/>
+        </frm:label>
+    </th:block>
+
+    <th:block name="radioFieldTest">
+        <h2>com/jukta/base/form/radioField</h2>
+        <frm:label label="Radio group">
+            <frm:radioField name="myName" checked="checked"/>
+            <frm:radioField name="myName"/>
+        </frm:label>
+
+        <h3>error='Error'</h3>
+        <frm:label label="My Label">
+            <frm:radioField name="myName" error="Error"/>
+        </frm:label>
+    </th:block>
+
+    <th:block name="selectFieldTest">
+        <h2>com/jukta/base/form/selectField</h2>
+        <frm:selectField name="myName">
+            <frm:optionGroup text="group 1">
+                <frm:option text="option 1"/>
+                <frm:option text="option 2"/>
+            </frm:optionGroup>
+            <frm:option text="option 3"/>
+        </frm:selectField>
+
+        <h3>error='Error'</h3>
+        <frm:label label="My Label">
+            <frm:selectField name="myName" error="Error">
+                <frm:option text="option 1"/>
+                <frm:option text="option 2"/>
+                <frm:option text="option 3"/>
+            </frm:selectField>
+        </frm:label>
     </th:block>
 
     <th:block name="buttonTest">
@@ -35,39 +96,45 @@
     <th:block name="formTest">
         <frm:form mods="">
             <frm:fieldSet legend="My field set">
-                <frm:textField fieldName="hello" label="Some field" error="error"/>
-                <frm:passwordField label="Some password field"/>
-                <frm:checkboxField fieldName="1" label="Some password field"/>
 
-                <!--<hr/>-->
-                <!--<lt:layout>-->
-                    <!--<lt:cell width="4">-->
-                        <!--<frm:label label="Hello"/>-->
-                    <!--</lt:cell>-->
-                    <!--<lt:cell width="4">-->
-                        <!--<frm:textField fieldName="hello" error="error"/>-->
-                    <!--</lt:cell>-->
-                    <!--<lt:cell width="4"><span></span></lt:cell>-->
-                <!--</lt:layout>-->
-                <!--<lt:layout>-->
-                    <!--<lt:cell width="4"><span></span></lt:cell>-->
-                    <!--<lt:cell width="4">-->
-                        <!--<frm:textField fieldName="hello"/>-->
-                    <!--</lt:cell>-->
-                    <!--<lt:cell width="4">-->
-                        <!--<frm:label label="Hello"/>-->
-                    <!--</lt:cell>-->
-                <!--</lt:layout>-->
+                <lt:container mods="float login">
+                    <lt:element mods="row1 c6">
+                        <frm:label label="Username"/>
+                    </lt:element>
+                    <lt:element mods="row1 c6">
+                        <frm:textField/>
+                    </lt:element>
+
+                    <lt:element mods="row2 c6">
+                        <frm:label label="password"/>
+                    </lt:element>
+                    <lt:element mods="row2 c6">
+                        <frm:passwordField/>
+                    </lt:element>
+
+                    <lt:element mods="row3 c6">
+                        <th:nbsp/>
+                    </lt:element>
+                    <lt:element mods="row3 c6">
+                        <frm:checkboxField fieldName="1"/>
+                    </lt:element>
+
+                    <lt:element mods="row4 c6">
+                        <frm:dropdown label="Action">
+                            <frm:action name="Action1" action="action1"/>
+                            <frm:action name="Action2" action="action2"/>
+                            <frm:action name="Action3" action="action3"/>
+                        </frm:dropdown>
+                    </lt:element>
+                    <lt:element mods="row4 c3">
+                        <frm:button mods="link" label="Reset"/>
+                    </lt:element>
+                    <lt:element mods="row4 c3">
+                        <frm:button label="Ok"/>
+                    </lt:element>
+                </lt:container>
             </frm:fieldSet>
-            <frm:buttonGroup>
-                <frm:dropdown label="Action">
-                    <frm:action name="Action1" action="action1"/>
-                    <frm:action name="Action2" action="action2"/>
-                    <frm:action name="Action3" action="action3"/>
-                </frm:dropdown>
-                <frm:button mods="link" label="Reset"/>
-                <frm:button label="Ok"/>
-            </frm:buttonGroup>
+
                 <p class="note">
                     После заполнения регистрационной формы, вам придёт письмо на почтовый адрес, указанный в этой форме. В письме находится ссылка, после перехода по ней авторизация будет закончена и вы сможете работать на сайте.
                 </p>
@@ -77,8 +144,13 @@
     <th:block name="FormTestPage">
         <div class="formTest">
             <lt:pageContainer>
+                <lc:labelTest/>
                 <lc:textFieldTest />
-                <lc:passwordFieldTest />
+                <lc:passwordFieldTest/>
+                <lc:textareaFieldTest/>
+                <lc:checkboxFieldTest/>
+                <lc:radioFieldTest/>
+                <lc:selectFieldTest/>
                 <lc:buttonTest />
                 <lc:formTest/>
             </lt:pageContainer>

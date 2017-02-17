@@ -1,26 +1,7 @@
-/*.textField {*/
-    /*display: inline-block;*/
-/*}*/
-
-.field.error input {
-    border: 1px solid red;
-}
-.field.error span.error {
-    color: red;
-}
-
-.button.link {
-    background:none;
-    border:none;
-    padding:0;
-    font: inherit;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
 .dropdown {
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
 
 .dropdown ul {
@@ -28,73 +9,8 @@
     position: absolute;
     z-index: 1;
     list-style: none;
-    padding: 5px 0;
-    margin: 0;
-    border: 1px solid #eeeeee;
 }
 
-.dropdown ul li {
-    padding: 3px 20px;
-}
-
-.dropdown ul li:hover {
-    background-color: #eeeeee;
-    cursor: pointer;
-}
-
-.dropdown .caret {
-    display: inline-block;
-    margin-left: 2px;
+.checkboxField {
     vertical-align: middle;
-    border-top: 4px dashed;
-    border-top: 4px solid\9;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
 }
-
-.form .field,
-.form .label {
-    display: block;
- }
-
-.form .label .field {
-    display: inline-block;
-}
-
-/*.form .textField .label {*/
-    /*display: inline-block;*/
-    /*width: 200px;*/
-    /*text-align: right;*/
-/*}*/
-
-/*.form .label.right {*/
-    /*padding-left: 200px;*/
-/*}*/
-
-/*.form .label.right input {*/
-
-/*}*/
-
-/*.form.table {*/
-    /*display: table;*/
-/*}*/
-
-/*.form.table .field {*/
-    /*display: table-row;*/
-/*}*/
-
-/*.form.table .field .label,*/
-/*.form.table .field .input {*/
-    /*display: table-cell;*/
-/*}*/
-
-
-/*.filed.layout {*/
-/*display: table-row;*/
-/*}*/
-
-/*.field.layout .label,*/
-/*.field.layout .input {*/
-    /*width: 50%;*/
-/*}*/
-

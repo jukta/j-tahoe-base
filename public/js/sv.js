@@ -4,7 +4,11 @@ var sv_core = new function() {
     var controllerList = [];
 
     this.controller = function(name, func) {
-        controllerList[name] = func;
+        if (func != null && (typeof name === 'string' || myVar instanceof String)) {
+            controllerList[name] = func;
+        } else {
+            return $(name)[0].svController;
+        }
     };
 
     this.initControllers = function(el) {

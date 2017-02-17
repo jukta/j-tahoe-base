@@ -82,11 +82,10 @@
 
 .checkboxField input[type="checkbox"],
 input[type="radio"] {
-    font-size: 1.1em;
-    height: 1em;
-    width: 1em;
-    vertical-align: middle;
-    margin: 0;
+    /*font-size: 1.1em;*/
+    /*height: 1em;*/
+    /*width: 1em;*/
+    /*margin: 0;*/
 }
 
 .checkboxField input[type="checkbox"] {
@@ -119,20 +118,10 @@ input[type="radio"] {
     border-top: 1px solid #DDDDDD;
     padding-top: 10px;
 }
-.buttonGroup,
-.fieldSet {
-    padding: 0.5em;
 
+.field > input {
+    border: 1px solid #AAAAAA;
 }
-
-.fieldSet {
-    border: none;
-}
-
-.fieldSet legend {
-    text-align: center;
-}
-
 
 
 
