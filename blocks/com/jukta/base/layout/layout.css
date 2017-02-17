@@ -1,94 +1,3 @@
-.layout > * {
-    float: left;
-    width: 100%;
-}
-
-.layout.hor {
-    display: table;
-    width: 100%;
-}
-
-.layout.hor > * {
-    float: none;
-    display: table-cell;
-    width: auto;
-}
-
-.layout.ver > * {
-    display: block;
-    float: none;
-}
-
-.layout > *.right:last-child,
-.layout.hor > *.right:last-child {
-    float:right;
-}
-
-.layout.padding {
-    padding: 10px ;
-}
-
-.layout.spacing > * {
-    padding: 10px;
-}
-
-.layout:after,
-.layout:before,
-.layout > *:after,
-.layout > *:before {
-    clear: both;
-    display: table;
-    content: " ";
-}
-
-.layout > *.c1 {
-    width: 8.333333%;
-}
-
-.layout > *.c2 {
-    width: 16.66666%;
-}
-
-.layout > *.c3 {
-    width: 25%;
-}
-
-.layout > *.c4 {
-    width: 33.333333%;
-}
-
-.layout > *.c5 {
-    width: 41.666666%;
-}
-
-.layout > *.c6 {
-    width: 50%;
-}
-
-.layout > *.c7 {
-    width: 58.333333%;
-}
-
-.layout > *.c8 {
-    width: 66.666666%;
-}
-
-.layout > *.c9 {
-    width: 75%;
-}
-
-.layout > *.c10 {
-    width: 83.333333%;
-}
-
-.layout > *.c11 {
-    width: 91.666666%;
-}
-
-.layout > *.c12 {
-    width: 100%;
-}
-
 .pageContainer {
     width: 1280px;
     margin: 0 auto;
@@ -112,48 +21,7 @@
 
 /*----------------------*/
 
-
-.verticalLayout > * {
-    display: block;
-}
-
-.verticalLayout.spacing > * {
-    margin-bottom: 10px;
-}
-
-.verticalLayout.spacing > *:last-child {
-    margin-bottom: 0;
-}
-
-.verticalLayout.padding, .horizontalLayout.padding {
-    padding: 10px;
-}
-
-.horizontalLayout {
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.horizontalLayout > * {
-    display: inline-block;
-}
-
-.horizontalLayout.spacing > * {
-    margin-right: 10px;
-}
-
-.horizontalLayout.spacing > *:last-child {
-    margin-right: 0;
-}
-
-.horizontalLayout > *.right {
-    float: right;
-}
-
-.pageLayout {
-    width: 1280px;
-    margin: 0 auto;
-}
+.pageLayout {}
 
 .pageLayout .column {
     width: 426px;
@@ -235,4 +103,118 @@
 .popupPanel .inner {
     position: absolute;
     z-index: 999999;
+}
+
+/*------------------------------------*/
+
+.container.float,
+.container.inline,
+.container.table,
+.container.flex {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    vertical-align: top;
+}
+
+.container.float > .element {
+    float: left;
+}
+
+.container.inline {
+    display: block;
+    height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container.table {
+    display: table;
+    height: auto;
+}
+
+.container.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container.float:after,
+.container.float:before,
+.container.float > *:after,
+.container.float > *:before {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+.container > .element {
+    display: block;
+}
+
+.container.flex > .element,
+.container.table > .element,
+.container.float > .element,
+.container.inline > .element {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: inherit;
+}
+
+.container.table .element {
+    display: table-cell;
+}
+
+.container > .element.c1 {
+    width: 8.333333%;
+}
+
+.container > .element.c2 {
+    width: 16.66666%;
+}
+
+.container > .element.c3 {
+    width: 25%;
+}
+
+.container > .element.c4 {
+    width: 33.333333%;
+}
+
+.container > .element.c5 {
+    width: 41.666666%;
+}
+
+.container > .element.c6 {
+    width: 50%;
+}
+
+.container > .element.c7 {
+    width: 58.333333%;
+}
+
+.container > .element.c8 {
+    width: 66.666666%;
+}
+
+.container > .element.c9 {
+    width: 75%;
+}
+
+.container > .element.c10 {
+    width: 83.333333%;
+}
+
+.container > .element.c11 {
+    width: 91.666666%;
+}
+
+.container > .element.c12 {
+    width: 100%;
+}
+
+.tabsPanel > .tab {
+    cursor: pointer;
 }

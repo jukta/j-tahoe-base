@@ -1,27 +1,14 @@
-.layoutTest .layout {
-    /*border: 1px solid grey;*/
-    background: lightgray;
+.splitLayoutTest .splitLayout {
+    height: 10em;
 }
 
-.layoutTest .element {
-    background: #9f0000;
-    color: white;
-    height: 100px;
-    width: 100%;
-    text-align: center;
-    line-height: 100px;
-    border: 1px solid red;
-}
-
-/*SplitLayoutTest*/
-
-.SplitLayoutTest .splitLayout {
-    height: 200px;
-    width: 500px;
+.containerTest .item {
     background: #eeeeee;
 }
 
-.SplitLayoutTest .splitLayout .left-pane > *,
-.SplitLayoutTest .splitLayout .right-pane > * {
-    margin: 10px;
+.containerTest .item:nth-child(odd) {
+    background: #DDDDDD;
+}
+
+.containerTest .container.inline .item {
 }

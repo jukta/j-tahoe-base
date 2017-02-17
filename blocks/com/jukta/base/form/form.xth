@@ -1,6 +1,7 @@
 <th:root xmlns:th="http://jukta.com/tahoe/schema"
          xmlns="http://www.w3.org/1999/xhtml"
          xmlns:lc="."
+         xmlns:lt="com/jukta/base/layout"
          namespace="com/jukta/base/form">
 
     <th:block name="label">
@@ -17,57 +18,76 @@
 
     <th:block name="field">
         <span class="field ${class} ${mods} ${!empty error ? 'error' : ''}">
-            <th:if exp="${!empty label}">
-                <label for="${fieldName}" class="field-label">${label}</label>
-            </th:if>
             <th:def name="fieldBody"/>
             <th:if exp="${!empty error}">
                 <span class="error">${error}</span>
             </th:if>
-            <th:if exp="${!empty description}">
-                <p>${description}</p>
-            </th:if>
         </span>
     </th:block>
 
-    <th:block name="textField" parent="lc:field" class="textField">
+    <th:block name="textField" class="textField" parent="lc:field">
         <th:def name="fieldBody">
-            <input class="input" type="text" name="${fieldName}" value="${value}">
+            <input type="text" name="${name}" value="${value}" placeholder="${placeholder}">
                 <th:def/>
             </input>
         </th:def>
     </th:block>
 
-    <th:block name="passwordField" parent="lc:field" class="passwordField">
+    <th:block name="textareaField" class="textareaField" parent="lc:field">
         <th:def name="fieldBody">
-            <input class="input" type="password" name="${fieldName}" value="${value}">
+            <textarea name="${name}" placeholder="${placeholder}">
+            </textarea>
+        </th:def>
+    </th:block>
+
+    <th:block name="passwordField" class="passwordField" parent="lc:field">
+        <th:def name="fieldBody">
+            <input type="password" name="${name}" value="${value}" placeholder="${placeholder}">
                 <th:def/>
             </input>
         </th:def>
     </th:block>
 
     <th:block name="hiddenField">
-        <input type="hidden" name="${fieldName}" value="${value}"/>
+        <input type="hidden" name="${name}" value="${value}"/>
     </th:block>
 
-    <th:block name="checkboxField" class="checkboxField">
-        <span class="field checkboxField ${class} ${mods} ${!empty error ? 'error' : ''}">
-            <th:def name="fieldBody">
-                <input type="checkbox" id="${fieldName}" name="${fieldName}"/>
-            </th:def>
-            <th:if exp="${!empty label}">
-                <label for="${fieldName}" class="field-label">${label}</label>
-            </th:if>
-            <th:if exp="${!empty error}">
-                <span class="error">${error}</span>
-            </th:if>
-            <th:if exp="${!empty description}">
-                <p>${description}</p>
-            </th:if>
-        </span>
+    <th:block name="checkboxField" class="checkboxField" parent="lc:field">
+        <th:def name="fieldBody">
+            <input type="checkbox" name="${name}"/>
+        </th:def>
     </th:block>
 
-    <th:block name="button">
+    <th:block name="radioField" class="radioField" parent="lc:field">
+        <th:def name="fieldBody">
+            <th:if exp="${!empty checked}">
+                <input type="radio" name="${name}" checked="checked"/>
+            </th:if>
+            <th:if exp="${empty checked}">
+                <input type="radio" name="${name}"/>
+            </th:if>
+        </th:def>
+    </th:block>
+
+    <th:block name="option">
+        <option>${text}</option>
+    </th:block>
+
+    <th:block name="optionGroup">
+        <optgroup label="${text}">
+            <th:def/>
+        </optgroup>
+    </th:block>
+
+    <th:block name="selectField" class="selectField" parent="lc:field">
+        <th:def name="fieldBody">
+            <select>
+                <th:def/>
+            </select>
+        </th:def>
+    </th:block>
+
+    <th:block name="button" parent="lt:element">
         <button type="${type}" class="button ${mods}" sv-click="${id}">${label}</button>
     </th:block>
 

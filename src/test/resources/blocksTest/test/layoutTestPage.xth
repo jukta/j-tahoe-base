@@ -3,8 +3,8 @@
          xmlns:lc="."
          xmlns:lt="com/jukta/base/layout"
          xmlns:ltf="com/jukta/base/layout/flex"
+         xmlns:frm="com/jukta/base/form"
          namespace="test">
-
 
     <th:block name="element">
         <div class="element">
@@ -12,105 +12,17 @@
         </div>
     </th:block>
 
-    <th:block name="LTest">
-
-        <div class="flexTest">
-
-                <h2>com/jukta/base/layout/layout</h2>
-                <h3>mods='spacing padding'</h3>
-                <lt:layout mods="spacing padding">
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <lt:cell><lc:element>no width</lc:element></lt:cell>
-                </lt:layout>
-
-                <h3>mods='hor spacing padding'</h3>
-                <lt:layout mods="hor spacing padding">
-                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <lt:cell><lc:element>no width</lc:element></lt:cell>
-                </lt:layout>
-                <br/>
-                <lt:layout mods="hor padding spacing">
-                    <div><lc:element>no width</lc:element></div>
-                    <div><lc:element>no width</lc:element></div>
-                    <div><lc:element>no width</lc:element></div>
-                </lt:layout>
-                <br/>
-                <lt:layout mods="hor padding spacing">
-                    <div><lc:element>no width</lc:element></div>
-                    <div><lc:element>no width</lc:element></div>
-                    <div class="right"><lc:element>class = right</lc:element></div>
-                </lt:layout>
-
-                <h3>ver spacing padding</h3>
-                <lt:layout mods="ver spacing padding">
-                    <lt:cell width="2"><lc:element>width = 2</lc:element></lt:cell>
-                    <lt:cell width="4"><lc:element>width = 4</lc:element></lt:cell>
-                    <div><lc:element>just div</lc:element></div>
-                </lt:layout>
+    <th:block name="PageContainerTest">
+        <div class="pageContainerTest">
+            <lt:pageContainer>
+                <h2>com/jukta/base/layout/pageContainer</h2>
+            </lt:pageContainer>
         </div>
     </th:block>
 
-    <th:block name="flexHLTest">
-        <div class="flexTest">
-            <h2>com/jukta/base/layout/flex/horizontalLayout</h2>
-            <h3>Padding</h3>
-            <ltf:horizontalLayout mods="padding">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:horizontalLayout>
-
-            <h3>Padding + Spacing</h3>
-            <ltf:horizontalLayout mods="padding spacing">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:horizontalLayout>
-
-            <h3>Padding + Spacing + Justify</h3>
-            <ltf:horizontalLayout mods="padding spacing justify">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:horizontalLayout>
-        </div>
-    </th:block>
-
-    <th:block name="flexVLTest">
-        <div class="flexTest">
-            <h2>com/jukta/base/layout/flex/verticalLayout</h2>
-            <h3>Padding</h3>
-            <ltf:verticalLayout mods="padding">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:verticalLayout>
-
-            <h3>Padding + Spacing</h3>
-            <ltf:verticalLayout mods="padding spacing">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:verticalLayout>
-
-            <h3>Padding + Spacing + Justify</h3>
-            <ltf:verticalLayout mods="padding spacing justify">
-                <div></div>
-                <div></div>
-                <div></div>
-            </ltf:verticalLayout>
-        </div>
-    </th:block>
-
-
-    <th:block name="LayoutTest" dataHandler="layoutTest">
-        <div class="layoutTest">
-            <h2>com/jukta/base/layout/layout</h2>
+    <th:block name="PageLayoutTest" dataHandler="layoutTest">
+        <div class="pageLayoutTest">
+            <h2>com/jukta/base/layout/pageLayout</h2>
             <lt:pageLayout>
                 <div>${text1}</div>
                 <div>${text2}</div>
@@ -122,7 +34,7 @@
     </th:block>
 
     <th:block name="SplitLayoutTest" dataHandler="layoutTest">
-        <div class="SplitLayoutTest">
+        <div class="splitLayoutTest">
             <h2>com/jukta/base/layout/splitLayout</h2>
             <lt:splitLayout>
                 <th:def name="left">
@@ -135,14 +47,84 @@
         </div>
     </th:block>
 
-    <th:block name="LayoutTestPage">
-        <div class="layoutTest">
-            <lt:pageContainer>
-                <lc:LTest/>
-                <lc:LayoutTest></lc:LayoutTest>
-                <lc:SplitLayoutTest></lc:SplitLayoutTest>
-            </lt:pageContainer>
+    <th:block name="PopupPanelTest">
+        <div class="popupPanelTest" sv-controller="popupPanelTest">
+            <h2>com/jukta/base/layout/popupPanel</h2>
+            <button>Click me!</button>
+            <lt:popupPanel>
+                I'm popup panel!!!
+            </lt:popupPanel>
         </div>
+    </th:block>
+
+    <th:block name="Item" parent="lt:element" class="item">
+        element
+    </th:block>
+
+    <th:block name="ContainerTest" dataHandler="layoutTest">
+        <div class="containerTest">
+            <h2>com/jukta/base/layout/container</h2>
+            <h3>mods: inline</h3>
+            <lt:container mods="inline">
+                <lc:Item/>
+                <lc:Item>${text1}</lc:Item>
+                <lc:Item/>
+            </lt:container>
+            <h3>mods: table</h3>
+            <lt:container mods="table">
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+            </lt:container>
+            <h3>mods: float</h3>
+            <lt:container mods="float">
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+            </lt:container>
+            <h3>mods: flex</h3>
+            <lt:container mods="flex">
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c4">mods='c4'</lc:Item>
+                <lc:Item mods="c1">mods='c1'</lc:Item>
+                <lc:Item mods="c7">mods='c7'</lc:Item>
+            </lt:container>
+
+        </div>
+    </th:block>
+
+    <th:block name="TabsPanelTest" dataHandler="layoutTest">
+        <div class="tabsPanelTest">
+            <h2>com/jukta/base/layout/tabsPanel</h2>
+            <lt:tabsPanel>
+                <lt:tab name="text1">Text1</lt:tab>
+                <lt:tab name="text2">Text2</lt:tab>
+                <lt:tabContent name="text1">${text1}</lt:tabContent>
+                <lt:tabContent name="text2">${text2}</lt:tabContent>
+            </lt:tabsPanel>
+        </div>
+    </th:block>
+
+    <th:block name="LayoutTestPage">
+        <lt:pageContainer class="layoutTest">
+            <lc:PageContainerTest></lc:PageContainerTest>
+            <lc:PageLayoutTest></lc:PageLayoutTest>
+            <lc:SplitLayoutTest></lc:SplitLayoutTest>
+            <lc:PopupPanelTest></lc:PopupPanelTest>
+            <lc:ContainerTest></lc:ContainerTest>
+            <lc:TabsPanelTest></lc:TabsPanelTest>
+        </lt:pageContainer>
     </th:block>
 
 </th:root>

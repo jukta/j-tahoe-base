@@ -1,0 +1,71 @@
+/*.textField {*/
+/*display: inline-block;*/
+/*}*/
+
+.field.error input {
+    border: 1px solid red;
+}
+.field.error span.error {
+    color: red;
+}
+
+.button.link {
+    background:none;
+    border:none;
+    padding:0;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dropdown ul {
+    border: 1px solid #eeeeee;
+}
+
+.dropdown ul li {
+    padding: 3px 20px;
+}
+
+.dropdown ul li:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.dropdown .caret {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.textField > input {
+    outline: 1px solid #eeeeee;
+}
+
+/*---------------------------------*/
+
+/* align */
+.lt{text-align:left;vertical-align:top;}
+.lm{text-align:left;vertical-align:middle;justify-content:flex-start;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+.lb{text-align:left;vertical-align:bottom;justify-content:flex-start;}
+.ct{text-align:center;vertical-align:top;justify-content:center;}
+.cm{text-align:center;vertical-align:middle;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+.cb{text-align:center;vertical-align:bottom;justify-content:center;}
+.rt{text-align:right;vertical-align:top;justify-content:flex-end;}
+.rm{text-align:right;vertical-align:middle;justify-content:flex-end;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+.rb{text-align:right;vertical-align:bottom;justify-content:flex-end;}
+.jt{text-align:justify;vertical-align:top;justify-content:space-between;}
+.jb{text-align:justify;vertical-align:bottom;justify-content:space-between;}
+.jm{text-align:justify;vertical-align:middle;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+
+.padd {padding: 1em;}
+.paddV {padding: 1em 0;}
+.paddH {padding: 0 1em;}
+.paddT {padding-top: 1em}
+.paddB {padding-bottom: 1em}
+.paddL {padding-left: 1em}
+.paddR {padding-right: 1em}
+
