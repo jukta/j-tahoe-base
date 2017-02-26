@@ -41,7 +41,20 @@
         </elem>
     </th:block>
 
-    <th:block name="container" parent="lc:element" class="container">
+    <th:block name="container" parent="lc:element" class="container ${class}">
+        <th:def/>
+    </th:block>
+    
+    <th:block name="trine" parent="lc:container" class="container trine ${class}" mods="table">
+        <lc:element mods="left">
+            <th:def name="left"><th:nbsp/></th:def>
+        </lc:element>
+        <lc:element mods="center">
+            <th:def name="center"><th:nbsp/></th:def>
+        </lc:element>
+        <lc:element mods="right">
+            <th:def name="right"><th:nbsp/></th:def>
+        </lc:element>
     </th:block>
 
     <th:block name="tabContent">

@@ -121,6 +121,10 @@
     float: left;
 }
 
+.container.float > .element.right {
+    float: right;
+}
+
 .container.inline {
     display: block;
     height: auto;
@@ -163,9 +167,19 @@
     vertical-align: inherit;
 }
 
-.container.table .element {
+.container.table > .element {
     display: table-cell;
 }
+
+.container.table.trine > .element.center {
+    text-align: center;
+}
+
+
+.container.table.trine > .element.right {
+    text-align: right;
+}
+
 
 .container > .element.c1 {
     width: 8.333333%;

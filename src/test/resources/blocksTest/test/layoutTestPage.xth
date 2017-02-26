@@ -104,6 +104,23 @@
         </div>
     </th:block>
 
+    <th:block name="TrineTest" dataHandler="layoutTest">
+        <div class="trineTest">
+            <h2>com/jukta/base/layout/trine</h2>
+            <lt:trine>
+                <th:def name="left">
+                    <lc:Item/>
+                </th:def>
+                <th:def name="center">
+                    <lc:Item/>
+                </th:def>
+                <th:def name="right">
+                    <lc:Item/>
+                </th:def>
+            </lt:trine>
+        </div>
+    </th:block>
+
     <th:block name="TabsPanelTest" dataHandler="layoutTest">
         <div class="tabsPanelTest">
             <h2>com/jukta/base/layout/tabsPanel</h2>
@@ -123,6 +140,7 @@
             <lc:SplitLayoutTest></lc:SplitLayoutTest>
             <lc:PopupPanelTest></lc:PopupPanelTest>
             <lc:ContainerTest></lc:ContainerTest>
+            <lc:TrineTest></lc:TrineTest>
             <lc:TabsPanelTest></lc:TabsPanelTest>
         </lt:pageContainer>
     </th:block>
