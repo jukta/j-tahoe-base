@@ -6,12 +6,12 @@
 
     <th:block name="label">
         <label class="label ${mods}">
-            <th:if exp="${!mods.contains('right')}">
-                <span class="lbl">${label}</span>
+            <th:if exp="${empty mods || !mods.contains('right')}">
+                <label for="${for}" class="lbl">${label}</label>
             </th:if>
             <th:def/>
-            <th:if exp="${mods.contains('right')}">
-                <span class="lbl">${label}</span>
+            <th:if exp="${!empty mods || mods.contains('right')}">
+                <label for="${for}" class="lbl">${label}</label>
             </th:if>
         </label>
     </th:block>
@@ -87,8 +87,8 @@
         </th:def>
     </th:block>
 
-    <th:block name="button" parent="lt:element">
-        <button type="${type}" class="button ${mods}" sv-click="${id}">${label}</button>
+    <th:block name="button" parent="lt:element" class="button ${class}" >
+        <button type="${type}" sv-click="${id}">${label}</button>
     </th:block>
 
     <th:block name="action">
