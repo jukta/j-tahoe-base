@@ -1,3 +1,4 @@
+/*-* layout*/
 .pageContainer {
     width: 1280px;
     margin: 0 auto;
@@ -82,7 +83,7 @@
     left: 50%;
     height: 100%;
     cursor: ew-resize;
-    background: lightgray;
+    background-color: lightgray;
 }
 
 .splitLayout .no-select {
@@ -102,7 +103,7 @@
 
 .popupPanel .inner {
     position: absolute;
-    z-index: 999999;
+    z-index: 111;/*__*!!*/
 }
 
 /*------------------------------------*/
@@ -121,7 +122,8 @@
     float: left;
 }
 
-.container.float > .element.right {
+.container.float > .element.right,
+.container.inline > .element.right {
     float: right;
 }
 
