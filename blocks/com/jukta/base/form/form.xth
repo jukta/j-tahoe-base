@@ -70,7 +70,12 @@
     </th:block>
 
     <th:block name="option">
-        <option>${text}</option>
+        <th:if exp="${!empty selected}">
+            <option selected="selected">${text}</option>
+        </th:if>
+        <th:if exp="${empty selected}">
+            <option>${text}</option>
+        </th:if>
     </th:block>
 
     <th:block name="optionGroup">
