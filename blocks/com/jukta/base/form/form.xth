@@ -70,10 +70,10 @@
     </th:block>
 
     <th:block name="option">
-        <th:if exp="${!empty selected}">
+        <th:if exp="${selected == 'true'}">
             <option selected="selected">${text}</option>
         </th:if>
-        <th:if exp="${empty selected}">
+        <th:if exp="${selected != 'true'}">
             <option>${text}</option>
         </th:if>
     </th:block>
@@ -84,7 +84,7 @@
         </optgroup>
     </th:block>
 
-    <th:block name="selectField" class="selectField" parent="lc:field">
+    <th:block name="selectField" class="selectField ${class}" parent="lc:field">
         <th:def name="fieldBody">
             <select>
                 <th:def/>
